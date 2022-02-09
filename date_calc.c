@@ -122,15 +122,15 @@ Date EarliestDate(Date tab[], int n)
         if(isValid(tab[i])) val++;
     }
 
-    Date najwcz;
+    Date earliest;
 
     if (val==0)
     {
         printf("There are no valid dates in the set!\n");
-        najwcz.day=0;
-        najwcz.month=0;
-        najwcz.year=0;
-        return najwcz;
+        earliest.day=0;
+        earliest.month=0;
+        earliest.year=0;
+        return earliest;
     }
 
     Date valid_dates[val];
@@ -146,17 +146,17 @@ Date EarliestDate(Date tab[], int n)
         }
     }
 
-    najwcz = valid_dates[0];
+    earliest = valid_dates[0];
 
     for(int i=1; i<j; i++)  //or i<val
     {
-        if(isEarlier(valid_dates[i], najwcz))
+        if(isEarlier(valid_dates[i], earliest))
         {
-            najwcz=valid_dates[i];
+            earliest=valid_dates[i];
         }
     }
 
-    return najwcz;
+    return earliest;
 
 }
 
