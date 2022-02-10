@@ -1,7 +1,7 @@
 #include "date_calc.h"
 
 
-unsigned int dayOfTheWeek(Date A)
+unsigned int dayOfTheWeek(const Date A)
 {
 
     unsigned int Y = A.year, M = A.month;
@@ -60,13 +60,13 @@ unsigned int dayOfTheWeek(Date A)
 }
 
 
-_Bool isLeap(unsigned int Y)
+_Bool isLeap(const unsigned int Y)
 {
     return ((Y%4==0&&Y%100!=0)||(Y%400==0));
 }
 
 
-_Bool isValid(Date A)
+_Bool isValid(const Date A)
 {
     if ((A.day==0)||(A.day > 31)||(A.month==0)||(A.month>12)||(A.year==0)) return 0;
     if ((isLeap(A.year))&&(A.month==2)&&(A.day==29)) return 1;
@@ -113,7 +113,7 @@ Date NextDay(Date A)
 
 
 
-Date EarliestDate(Date tab[], int n)
+Date EarliestDate(const Date tab[], const int n)
 {
     int val = 0;
 
@@ -216,7 +216,7 @@ void EarliestFromArray()
 }
 
 
-bool isEarlier(Date A, Date B)
+bool isEarlier(const Date A, const Date B)
 {
     if(A.year<B.year) return 1;
     if(A.year>B.year) return 0;
@@ -227,9 +227,9 @@ bool isEarlier(Date A, Date B)
 }
 
 
-void PrintDate(Date A)
+void PrintDate(const Date A)
 {
-    printf("%d-%.2d-%d\n", A.year, A.month, A.day);       //// ISO 8601: YYYY-MM-DD
+    printf("%d-%.2d-%d\n", A.year, A.month, A.day);       // ISO 8601 format: YYYY-MM-DD
 }
 
 

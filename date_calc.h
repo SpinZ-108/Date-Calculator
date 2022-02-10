@@ -10,14 +10,14 @@ typedef struct
 } Date;
 
 
-unsigned int dayOfTheWeek(Date A);
-_Bool isLeap(unsigned int);
-_Bool isValid(Date);
+unsigned int dayOfTheWeek(const Date A);
+_Bool isLeap(const unsigned int);
+_Bool isValid(const Date);
 Date NextDay(Date);
-Date EarliestDate(Date [], int);
+Date EarliestDate(const Date [], const int);
 void EarliestFromArray();
-_Bool isEarlier(Date, Date);
-void PrintDate(Date);
+_Bool isEarlier(const Date, const Date);
+void PrintDate(const Date);
 void ReadFromUser(Date *);
 
 
