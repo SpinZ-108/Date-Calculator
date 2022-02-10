@@ -216,7 +216,7 @@ void EarliestFromArray()
 }
 
 
-bool isEarlier(const Date A, const Date B)
+_Bool isEarlier(const Date A, const Date B)
 {
     if(A.year<B.year) return 1;
     if(A.year>B.year) return 0;
